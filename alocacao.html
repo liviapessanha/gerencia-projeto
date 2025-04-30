@@ -46,31 +46,29 @@
         background-size: 24px;
       }
 
-      .search-box {
-        flex-grow: 1;
-        margin: 0 20px;
-        position: relative;
-      }
 
-      .search-box input {
-        width: 100%;
-        padding: 10px 15px 10px 35px;
-        border: none;
-        border-radius: 20px;
-        background-color: #ebebeb;
-      }
-
-      .search-box::before {
-        content: '';
-        position: absolute;
-        left: 12px;
-        top: 8px;
-        width: 16px;
-        height: 16px;
-        background: url('buscar.png') no-repeat center center;
-        background-size: contain;
-      }
-
+.search-bar {
+            display: flex;
+            background-color: #f5f5f5;
+            border-radius: 50px;
+            padding: 10px 20px;
+            width: 40%;
+            align-items: center;
+        }
+        
+        .search-bar input {
+            border: none;
+            width: 100%;
+            padding: 5px;
+            margin-left: 10px;
+            outline: none;
+            background-color: transparent;
+            font-size: 14px;
+        }
+        
+        .search-icon {
+            color: #777;
+        }
       .user-profile {
         display: flex;
         align-items: center;
@@ -203,9 +201,20 @@
   </head>
   <body>
     <header>
-      <button class="menu-btn"></button>
-      <div class="search-box">
-        <input type="text" placeholder="Procurar" />
+      <button class="menu-btn">☰</button>
+      
+      
+
+        
+        <div class="search-bar">
+            <span class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </span>
+            <input type="text" placeholder="Procurar">
+        
       </div>
       <div class="user-profile">
         <div class="notification-bell"></div>
