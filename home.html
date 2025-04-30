@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="css/home/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div>
+        <div class="menu-btn"></div>
+      </div>
+      <div class="barra-pesquisa">
+        <input type="text" placeholder="Procurar" />
+      </div>
+      <div class="usuario">
+        <img
+          class="icon-sino"
+          src="https://cdn-icons-png.flaticon.com/512/1827/1827349.png"
+          alt="Sino"
+        />
+        <span>Alan Rene</span>
+        <img
+          src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231712/thesomeday123171200009/91087331-cone-de-perfil-de-avatar-padr%C3%A3o-para-masculino-espa%C3%A7o-reservado-para-fotos-cinza-ilustra%C3%A7%C3%A3o.jpg?ver=6"
+          alt="Avatar"
+        />
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="cards">
+        <div class="card professor">
+          <h3>
+            <img
+              class="professor-icon"
+              src="assets/icons/professor-icon.png"
+              alt="Icone"
+            />
+            <span>Professor</span>
+          </h3>
+          <ul class="options-professor">
+            <li>
+              <img
+                class="icon-vector"
+                src="assets/icons/clipe.png"
+                alt="Icone"
+              />
+              <span class="card-itens-professor">Meus diários</span>
+            </li>
+            <li>
+              <img
+                class="icon-vector"
+                src="assets/icons/clipe.png"
+                alt="Icone"
+              />
+              <span class="card-itens-professor">Meus dados</span>
+            </li>
+            <li>
+              <img
+                class="icon-vector"
+                src="assets/icons/clipe.png"
+                alt="Icone"
+              />
+              <span class="card-itens-professor">Matérias de Aula</span>
+            </li>
+            <li>
+              <img
+                class="icon-vector"
+                src="assets/icons/clipe.png"
+                alt="Icone"
+              />
+              <span class="card-itens-professor">Agenda de Avaliação</span>
+            </li>
+            <li>
+              <img
+                class="icon-vector"
+                src="assets/icons/clipe.png"
+                alt="Icone"
+              />
+              <span class="card-itens-professor"
+                >Orientação de projeto final</span
+              >
+            </li>
+            <li>
+              <img
+                class="icon-vector"
+                src="assets/icons/clipe.png"
+                alt="Icone"
+              />
+              <span class="card-itens-professor"
+                >Plano individual de trabalho</span
+              >
+            </li>
+            <li>
+              <img
+                class="icon-vector"
+                src="assets/icons/clipe.png"
+                alt="Icone"
+              />
+              <span class="card-itens-professor">Planos de Ensino</span>
+            </li>
+        </div>
+
+        <div class="card pendencias">
+          <h3>
+            <img
+              class="caderno-icon"
+              src="assets/icons/caderno-icon.png"
+              alt="Icone"
+            />
+            <span>Pendências</span>
+          </h3>
+          <ul class="options-pendencias">
+            <li>
+              <strong class="number-pendencia">12</strong> 
+              <span class="nome-pendencia"><strong>Documentos eletrônicos</strong> para analisar</span>
+            </li>
+            <li>
+              <strong class="number-pendencia">05</strong> 
+              <span  class="nome-pendencia">
+                <strong>Processos eletrônicos</strong> aguardando aprovação
+              </span>
+            </li>
+            <li>
+              <strong class="number-pendencia">03</strong> 
+              <span class="nome-pendencia">
+                <strong>Requerimentos</strong> aguardando análise
+              </span> 
+            </li>
+            <li>
+              <strong class="number-pendencia">02</strong> 
+              <span class="nome-pendencia">
+                <strong>Pendências</strong> do setor para resolver
+              </span>
+            </li>
+            <li>
+              <strong class="number-pendencia">01</strong> 
+              <span class="nome-pendencia">
+                <strong>Pendências</strong> do setor para resolver
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card calendario">
+          <h3>
+            <img
+              class="calendario-icon"
+              src="assets/icons/calendario-icon.png"
+              alt="Icone"
+            />
+            <span>Calendário Administrativo</span>
+          </h3>
+          <p><strong>Maio 2025</strong></p>
+          <p>Dia 02: Abertura para lançamento de notas</p>
+          <p>Dia 17: Fechamento de retificações</p>
+          <p>Dia 23: Fechamento de lançamentos de notas</p>
+        </div>
+      </section>
+
+      <section class="menus">
+        <div class="menu-item" onclick="toggleSubmenu('doc')">
+          Documentos/Processos
+          <div id="submenu-doc" class="submenu">
+            <p>Documentos Eletrônicos</p>
+            <p>Processos Eletrônicos</p>
+            <p>Processos</p>
+            <p>Requerimentos</p>
+            <p>Distribuição de trâmites</p>
+            <p>Cadastros</p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleSubmenu('ensino')">
+          Ensino
+          <div id="submenu-ensino" class="submenu">
+            <p>EAD</p>
+            <p>Procedimentos de apoio</p>
+            <p>Disciplinas</p>
+            <p>Turmas e diários</p>
+            <p>Alunos</p>
+          </div>
+        </div>
+
+        <div class="menu-item">Pesquisa</div>
+        <div class="menu-item">Extensão</div>
+        <div class="menu-item">Gestão de pessoas</div>
+        <div class="menu-item">Administração</div>
+        <div class="menu-item">Tec. da Informação</div>
+        <div class="menu-item">Central de Serviços</div>
+        <div class="menu-item">Des. Institucional</div>
+      </section>
+
+      <footer class="noticias">
+        <div class="noticia">
+          <h4>Notícia</h4>
+          <p>
+            Mulheres IF seleciona profissionais para atuação como professores
+            bolsistas
+          </p>
+        </div>
+        <div class="noticia">
+          <h4>Notícia</h4>
+          <p>
+            IFRJ promove ações para fortalecer o EJA com oferta de vagas e
+            parcerias
+          </p>
+        </div>
+        <div class="noticia">
+          <h4>Notícia</h4>
+          <p>Presidente Lula assina termo para construção do Campus Magé</p>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      function toggleSubmenu(id) {
+        const menu = document.getElementById(`submenu-${id}`)
+        menu.classList.toggle('show')
+      }
+    </script>
+  </body>
+</html>
