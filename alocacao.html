@@ -36,7 +36,7 @@
 
       .menu-btn {
         background-color: #ebebeb;
-        width: 40px;
+        width: 80px;
         height: 40px;
         border-radius: 5px;
         border: none;
@@ -75,14 +75,11 @@
         gap: 10px;
       }
 
-      .notification-bell {
-        font-size: 1.2rem;
-        width: 24px;
-        height: 24px;
-        display: inline-block;
-        background: url('notificacao.png') no-repeat center center;
-        background-size: contain;
-      }
+      .notification-icon {
+            margin-right: 15px;
+            color: white;
+            font-size: 20px;
+        }
 
       .user-avatar {
         width: 35px;
@@ -201,7 +198,7 @@
   </head>
   <body>
     <header>
-      <button class="menu-btn">☰</button>
+      <button class="menu-btn"></button>
       
       
 
@@ -217,9 +214,17 @@
         
       </div>
       <div class="user-profile">
-        <div class="notification-bell"></div>
+        <div class="notification-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+      </div>
         <div class="user-avatar">
-          <img src="/api/placeholder/35/35" alt="Nome Usuário" />
+          <img
+          src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231712/thesomeday123171200009/91087331-cone-de-perfil-de-avatar-padr%C3%A3o-para-masculino-espa%C3%A7o-reservado-para-fotos-cinza-ilustra%C3%A7%C3%A3o.jpg?ver=6"
+          alt="Avatar"
+        />
         </div>
         <span>Nome Usuário</span>
       </div>
