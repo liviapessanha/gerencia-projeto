@@ -1,155 +1,299 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Perfil professor alocação</title>
-  <style>
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Perfil Professor Alocação</title>
+    <style>
+      @font-face {
+        font-family: 'Intro';
+        src: url('caminho-para-sua-fonte/intro-bold.woff2') format('woff2'),
+          url('caminho-para-sua-fonte/intro-bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+      }
+      :root {
+        --azul-principal: #013c5a;
+        --cinza-fundo: #f0ece6;
+        --branco: #ffffff;
+        --cinza-medio: #ccc;
+        --cinza-claro: #eee;
+      }
 
-    html, body {
-      height: 100%;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Intro', sans-serif;
+      }
 
-    body {
-      font-family: IntroBold;
-      background-color: #D9D9D9;
-    }
+      body {
+        background-color: var(--cinza-fundo);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
 
-    .pagina {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+      header {
+        background-color: var(--azul-principal);
+        color: white;
+        padding: 20px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-    header {
-      background-color: #013C5A ;
-      color: white;
-      padding: 15px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+      .barra-pesquisa input {
+        width: 400px;
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+      }
 
-    .barra-pesquisa {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
+      .usuario {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
 
-    .barra-pesquisa input {
-      width: 50%;
-      max-width: 400px;
-      padding: 8px 12px;
-      border-radius: 5px;
-      border: none;
-      font-size: 14px;
-    }
+      .usuario img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
 
-    .icones-direita {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+      .breadcrumb {
+        font-size: 12px;
+        color: #555;
+        padding: 15px 30px;
+      }
 
-    .icone-sino {
-      width: 24px;
-      height: 24px;
-      filter: brightness(0) invert(1);
-      cursor: pointer;
-    }
+      .conteudo {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 30px;
+        flex: 1;
+      }
 
-    .avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background-color: #ccc;
-      overflow: hidden;
-    }
+      .esquerda {
+        width: 65%;
+      }
 
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+      .direita {
+        width: 30%;
+        background-color: var(--branco);
+        padding: 15px;
+        border-radius: 10px;
+      }
 
-    .breadcrumb {
-      font-size: 12px;
-      color: #666;
-      padding: 10px 30px;
-    }
+      .titulo-secao {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
 
-    footer {
-      background-color: #013C5A;
-      color: white;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+      .info-box {
+        background: var(--branco);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
 
-    .logo-iff {
-      height: 40px;
-    }
+      .info-box table {
+        width: 100%;
+        font-size: 14px;
+        margin-top: 10px;
+      }
 
-    .redes-sociais {
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 20px;
-      max-width: 300px;
-    }
+      .info-box table td {
+        padding: 5px;
+      }
 
-    .redes-sociais img {
-      width: 100%;
-      max-width: 180px;
-      height: auto;
-      filter: brightness(0) invert(1);
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
+      .disciplinas input,
+      .disciplinas select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        margin-bottom: 10px;
+        background-color: var(--cinza-claro);
+      }
 
-    .redes-sociais img:hover {
-      opacity: 0.7;
-    }
-  </style>
-</head>
-<body>
-  <div class="pagina">
+      .btn-concluir {
+        padding: 10px 20px;
+        background-color: var(--azul-principal);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        float: right;
+      }
 
+      .caixa-disciplina {
+        background-color: #d6e6f2;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+
+      .caixa-disciplina:last-child {
+        background-color: #f0f0f0;
+      }
+
+      .eletiva {
+        background-color: #c7f3d0;
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 5px;
+        float: right;
+        color: #1a531b;
+      }
+
+      footer {
+        background-color: #013c5a;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-iff {
+        height: 40px;
+      }
+
+      .redes-sociais {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px;
+        max-width: 300px;
+      }
+
+      .redes-sociais img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+        filter: brightness(0) invert(1);
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+
+      .redes-sociais img:hover {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
     <header>
-      <div></div>
-
-      <div class="barra-pesquisa">
-        <input type="text" placeholder="Pesquisar...">
+      <div>
+        <div
+          style="
+            width: 50px;
+            height: 25px;
+            background-color: white;
+            border-radius: 5px;
+          "
+        ></div>
       </div>
-
-      <div class="icones-direita">
-        <img src="https://cdn-icons-png.flaticon.com/512/1827/1827349.png" alt="Notificações" class="icone-sino">
-        <div class="avatar">
-          <img src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231712/thesomeday123171200009/91087331-cone-de-perfil-de-avatar-padr%C3%A3o-para-masculino-espa%C3%A7o-reservado-para-fotos-cinza-ilustra%C3%A7%C3%A3o.jpg?ver=6" alt="Perfil">
-        </div>
+      <div class="barra-pesquisa">
+        <input type="text" placeholder="Procurar" />
+      </div>
+      <div class="usuario">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1827/1827349.png"
+          alt="Sino"
+          style="width: 24px; filter: brightness(0) invert(1)"
+        />
+        <span>Alan Rene</span>
+        <img
+          src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231712/thesomeday123171200009/91087331-cone-de-perfil-de-avatar-padr%C3%A3o-para-masculino-espa%C3%A7o-reservado-para-fotos-cinza-ilustra%C3%A7%C3%A3o.jpg?ver=6"
+          alt="Avatar"
+        />
       </div>
     </header>
 
     <div class="breadcrumb">
-      HOME &gt; ENSINO &gt; DISCIPLINAS &gt; ALOCAÇÃO DE DISCIPLINAS &gt; BRUNO PESSANHA
+      HOME > ENSINO > DISCIPLINAS > ALOCAÇÃO DE DISCIPLINA > BRUNO PESSANHA
     </div>
 
-    <!-- Conteúdo principal pode ir aqui -->
-    <div style="flex: 1;"></div>
+    <div class="conteudo">
+      <div class="esquerda">
+        <div class="info-box">
+          <div class="titulo-secao">Bruno Pessanha</div>
+          <div class="titulo-secao" style="color: #013c5a">
+            Dados Gerais &#9662;
+          </div>
+          <table>
+            <tr>
+              <td><strong>Matrícula:</strong><br />00002233333</td>
+              <td>
+                <strong>Curso de Origem:</strong><br /><span
+                  style="color: #013c5a"
+                  >Design Gráfico</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Disciplina de Interesse:</strong><br />
+                <span style="color: #013c5a"
+                  >Produção Gráfica<br />Oficina da Cor<br />Oficina da Forma<br />Oficina
+                  de Quadrinhos</span
+                >
+              </td>
+              <td>
+                <strong>Data do registro de interesse:</strong><br />
+                <span style="color: #013c5a"
+                  >24/03/2025<br />13/02/2025<br />13/02/2025<br />01/08/2024</span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="disciplinas">
+          <label class="titulo-secao">DISCIPLINAS DO CURSO</label>
+          <select>
+            <option>SELECIONE A(S) DISCIPLINA(S)</option>
+          </select>
+          <button class="btn-concluir">Concluir</button>
+        </div>
+      </div>
+
+      <div class="direita">
+        <div
+          class="titulo-secao"
+          style="
+            background: #013c5a;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+          "
+        >
+          DISCIPLINAS LECIONADAS
+        </div>
+        <div class="caixa-disciplina">História da Arte</div>
+        <div class="caixa-disciplina">Desenhos</div>
+        <div class="caixa-disciplina">Identidade de Marca</div>
+        <div class="caixa-disciplina">
+          Ilustração <span class="eletiva">ELETIVA</span>
+        </div>
+        <div class="caixa-disciplina"></div>
+        <div class="caixa-disciplina"></div>
+      </div>
+    </div>
 
     <footer>
-      <img src="1b07b768699e88694a696dcf918ccff86a5036aa.png" alt="Instituto Federal Fluminense" class="logo-iff">
-
+      <img
+        src="assets/logo/1b07b768699e88694a696dcf918ccff86a5036aa.png"
+        alt="Logo IFF"
+        style="height: 40px"
+      />
       <div class="redes-sociais">
-        <img src="93dfc774aa15fdaeaeb74208f938710f3cfbcffb.png" alt="Icones redes sociais">
+        <img
+          src="assets/icons/93dfc774aa15fdaeaeb74208f938710f3cfbcffb.png"
+          alt="Icones redes sociais"
+        />
       </div>
     </footer>
-
-  </div>
-</body>
+  </body>
 </html>

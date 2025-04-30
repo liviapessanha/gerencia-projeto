@@ -1,332 +1,298 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alocação de Disciplina</title>
     <style>
-        @font-face {
-            font-family: 'Intro';
-            src: url('caminho-para-sua-fonte/intro-bold.woff2') format('woff2'),
-                 url('caminho-para-sua-fonte/intro-bold.woff') format('woff');
-            font-weight: bold;
-            font-style: normal;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Intro', sans-serif;
-            font-weight: bold;
-        }
-        
-        body {
-            background-color: #f0f0f0;
-        }
-        
-        
-        header {
-            background-color: #004165;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .menu-btn {
-            background-color: #ebebeb;
-            width: 40px;
-            height: 40px;
-            border-radius: 5px;
-            border: none;
-            background-image: url('menu.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 24px;
-        }
-        
-        .search-box {
-            flex-grow: 1;
-            margin: 0 20px;
-            position: relative;
-        }
-        
-        .search-box input {
-            width: 100%;
-            padding: 10px 15px 10px 35px;
-            border: none;
-            border-radius: 20px;
-            background-color: #ebebeb;
-        }
-        
-        .search-box::before {
-            content: "";
-            position: absolute;
-            left: 12px;
-            top: 8px;
-            width: 16px;
-            height: 16px;
-            background: url('buscar.png') no-repeat center center;
-            background-size: contain;
-        }
-        
-        .user-profile {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .notification-bell {
-            font-size: 1.2rem;
-            width: 24px;
-            height: 24px;
-            display: inline-block;
-            background: url('notificacao.png') no-repeat center center;
-            background-size: contain;
-        }
-        
-        .user-avatar {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background-color: #ccc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        
-        .breadcrumb {
-            background-color: #e0e0e0;
-            padding: 10px 20px;
-            font-size: 0.8rem;
-        }
-        
-        .breadcrumb a {
-            color: #004165;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-        
-        .breadcrumb span::after {
-            content: " > ";
-            color: #666;
-        }
-        
-        
-        .content {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .column {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .section-header {
-            background-color: #004165;
-            color: white;
-            padding: 10px 15px;
-            font-weight: bold;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-        
-        .professor-list {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .professor-item {
-            padding: 15px;
-            background-color: #f9f5ec;
-            border-bottom: 1px solid #e0e0e0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .professor-name {
-            color: #006699;
-            font-weight: 500;
-        }
-        
-        .interest-tag {
-            background-color: #f0b93b;
-            color: #000;
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 3px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        
-        
-        footer {
-            background-color: #004165;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .institute-logo {
-            height: 40px;
-        }
-        
-        .social-media {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .social-icon {
-            width: 30px;
-            height: 30px;
-            background-color: white;
-            border-radius: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #004165;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 18px 18px;
-        }
-        
-        .facebook-icon {
-            background-image: url('facebook.png');
-        }
-        
-        .instagram-icon {
-            background-image: url('instagram.png');
-        }
-        
-        .youtube-icon {
-            background-image: url('youtube.png');
-        }
-        
-        
-        .icon-home {
-            background-image: url('home.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-        }
-        
-        
+      @font-face {
+        font-family: 'Intro';
+        src: url('caminho-para-sua-fonte/intro-bold.woff2') format('woff2'),
+          url('caminho-para-sua-fonte/intro-bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Intro', sans-serif;
+        font-weight: bold;
+      }
+
+      body {
+        background-color: #f0f0f0;
+      }
+
+      header {
+        background-color: #004165;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .menu-btn {
+        background-color: #ebebeb;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-image: url('menu.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 24px;
+      }
+
+      .search-box {
+        flex-grow: 1;
+        margin: 0 20px;
+        position: relative;
+      }
+
+      .search-box input {
+        width: 100%;
+        padding: 10px 15px 10px 35px;
+        border: none;
+        border-radius: 20px;
+        background-color: #ebebeb;
+      }
+
+      .search-box::before {
+        content: '';
+        position: absolute;
+        left: 12px;
+        top: 8px;
+        width: 16px;
+        height: 16px;
+        background: url('buscar.png') no-repeat center center;
+        background-size: contain;
+      }
+
+      .user-profile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .notification-bell {
+        font-size: 1.2rem;
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        background: url('notificacao.png') no-repeat center center;
+        background-size: contain;
+      }
+
+      .user-avatar {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .breadcrumb {
+        background-color: #e0e0e0;
+        padding: 10px 20px;
+        font-size: 0.8rem;
+      }
+
+      .breadcrumb a {
+        color: #004165;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .breadcrumb span::after {
+        content: ' > ';
+        color: #666;
+      }
+
+      .content {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .column {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .section-header {
+        background-color: #004165;
+        color: white;
+        padding: 10px 15px;
+        font-weight: bold;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      .professor-list {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .professor-item {
+        padding: 15px;
+        background-color: #f9f5ec;
+        border-bottom: 1px solid #e0e0e0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .professor-name {
+        color: #006699;
+        font-weight: 500;
+      }
+
+      .interest-tag {
+        background-color: #f0b93b;
+        color: #000;
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      footer {
+        background-color: #013c5a;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        bottom: 0;
+        width: 100%;
+        position: fixed;
+      }
+
+      .logo-iff {
+        height: 40px;
+      }
+
+      .redes-sociais {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px;
+        max-width: 300px;
+      }
+
+      .redes-sociais img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+        filter: brightness(0) invert(1);
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+
+      .redes-sociais img:hover {
+        opacity: 0.7;
+      }
     </style>
-</head>
-<body>
-    
+  </head>
+  <body>
     <header>
-        <button class="menu-btn"></button>
-        <div class="search-box">
-            <input type="text" placeholder="Procurar">
+      <button class="menu-btn"></button>
+      <div class="search-box">
+        <input type="text" placeholder="Procurar" />
+      </div>
+      <div class="user-profile">
+        <div class="notification-bell"></div>
+        <div class="user-avatar">
+          <img src="/api/placeholder/35/35" alt="Nome Usuário" />
         </div>
-        <div class="user-profile">
-            <div class="notification-bell"></div>
-            <div class="user-avatar">
-                <img src="/api/placeholder/35/35" alt="Nome Usuário">
-            </div>
-            <span>Nome Usuário</span>
-        </div>
+        <span>Nome Usuário</span>
+      </div>
     </header>
-    
-    
+
     <div class="breadcrumb">
-        <span><a href="#">HOME</a></span>
-        <span><a href="#">ENSINO</a></span>
-        <span><a href="#">DISCIPLINAS</a></span>
-        <span>ALOCAÇÃO DE DISCIPLINA</span>
+      <span><a href="#">HOME</a></span>
+      <span><a href="#">ENSINO</a></span>
+      <span><a href="#">DISCIPLINAS</a></span>
+      <span>ALOCAÇÃO DE DISCIPLINA</span>
     </div>
-    
-    
+
     <div class="content">
-        
-        <div class="column">
-            <div class="section-header">DOCENTES INTERNOS</div>
-            <div class="professor-list">
-                <div class="professor-item">
-                    <div class="professor-name">Professor Interno 1</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Interno 2</div>
-                    <div class="interest-tag">LISTA DE INTERESSE</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Interno 3</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Interno 4</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Interno 5</div>
-                    <div class="interest-tag">LISTA DE INTERESSE</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Interno 6</div>
-                    <div class="interest-tag">LISTA DE INTERESSE</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Interno 7</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Interno 8</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Interno 9</div>
-                    <div class="interest-tag">LISTA DE INTERESSE</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Interno 10</div>
-                    <div class="interest-tag">LISTA DE INTERESSE</div>
-                </div>
-            </div>
+      <div class="column">
+        <div class="section-header">DOCENTES INTERNOS</div>
+        <div class="professor-list">
+          <div class="professor-item">
+            <div class="professor-name">Professor Interno 1</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Interno 2</div>
+            <div class="interest-tag">LISTA DE INTERESSE</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Interno 3</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Interno 4</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Interno 5</div>
+            <div class="interest-tag">LISTA DE INTERESSE</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Interno 6</div>
+            <div class="interest-tag">LISTA DE INTERESSE</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Interno 7</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Interno 8</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Interno 9</div>
+            <div class="interest-tag">LISTA DE INTERESSE</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Interno 10</div>
+            <div class="interest-tag">LISTA DE INTERESSE</div>
+          </div>
         </div>
-        
-        
-        <div class="column">
-            <div class="section-header">DOCENTES EXTERNOS</div>
-            <div class="professor-list">
-                <div class="professor-item">
-                    <div class="professor-name">Professor Externo 1</div>
-                    <div class="interest-tag">LISTA DE INTERESSE</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Externo 2</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Externo 3</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Externo 4</div>
-                </div>
-                <div class="professor-item">
-                    <div class="professor-name">Professor Externo 5</div>
-                </div>
-            </div>
+      </div>
+
+      <div class="column">
+        <div class="section-header">DOCENTES EXTERNOS</div>
+        <div class="professor-list">
+          <div class="professor-item">
+            <div class="professor-name">Professor Externo 1</div>
+            <div class="interest-tag">LISTA DE INTERESSE</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Externo 2</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Externo 3</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Externo 4</div>
+          </div>
+          <div class="professor-item">
+            <div class="professor-name">Professor Externo 5</div>
+          </div>
         </div>
+      </div>
     </div>
-    
-    
+
     <footer>
-        <div class="institute-logo">
-            <img src="/api/placeholder/120/40" alt="Logo Instituição">
-            
+        <img src="assets/logo/1b07b768699e88694a696dcf918ccff86a5036aa.png" alt="Logo IFF" style="height: 40px;">
+        <div class="redes-sociais">
+          <img src="assets/icons/93dfc774aa15fdaeaeb74208f938710f3cfbcffb.png" alt="Icones redes sociais">
         </div>
-        <div class="social-media">
-            <div class="social-icon facebook-icon"></div>
-            <div class="social-icon instagram-icon"></div>
-            <div class="social-icon youtube-icon"></div>
-            
-        </div>
-    </footer>
-</body>
+      </footer>
+  </body>
 </html>

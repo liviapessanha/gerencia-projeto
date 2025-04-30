@@ -174,54 +174,42 @@
             color: #0b6e9e;
         }
         
-        /* Footer */
-        .college-footer {
-            background-color: #003b55;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .college-logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-grid {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            grid-gap: 2px;
-            margin-right: 10px;
-        }
-        
-        .logo-cell {
-            width: 12px;
-            height: 12px;
-            background-color: white;
-        }
-        
-        .logo-text {
-            font-size: 0.9rem;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .social-icons {
-            display: flex;
-            align-items: center;
-        }
-        
-        .social-icons a {
-            color: white;
-            margin-left: 15px;
-            text-decoration: none;
-            font-size: 24px;
-        }
+        footer {
+        background-color: #013c5a;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        bottom: 0;
+        width: 100%;
+        position: fixed;
+      }
+
+      .logo-iff {
+        height: 40px;
+      }
+
+      .redes-sociais {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 60px;
+        padding-right: 20px;
+        max-width: 300px;
+      }
+
+      .redes-sociais img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+        filter: brightness(0) invert(1);
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+
+      .redes-sociais img:hover {
+        opacity: 0.7;
+      }
     </style>
 </head>
 <body>
@@ -305,47 +293,12 @@
         </tr>
     </table>
     
-    <div style="height: 100px;"></div> <!-- Espaço para o footer -->
-    
-    <div class="college-footer">
-        <div class="college-logo">
-            <div class="logo-grid">
-                <div class="logo-cell"></div>
-                <div class="logo-cell"></div>
-                <div class="logo-cell"></div>
-                <div class="logo-cell"></div>
-                <div class="logo-cell"></div>
-                <div class="logo-cell"></div>
-                <div class="logo-cell"></div>
-                <div class="logo-cell"></div>
-                <div class="logo-cell"></div>
-            </div>
-            <div class="logo-text">
-                <span>INSTITUTO FEDERAL</span>
-                <span>Fluminense</span>
-                <span>Campus Campos Centro</span>
-            </div>
+    <footer>
+        <img src="assets/logo/1b07b768699e88694a696dcf918ccff86a5036aa.png" alt="Logo IFF" style="height: 40px;">
+        <div class="redes-sociais">
+          <img src="assets/icons/93dfc774aa15fdaeaeb74208f938710f3cfbcffb.png" alt="Icones redes sociais">
         </div>
-        <div class="social-icons">
-            <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                </svg>
-            </a>
-            <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-            </a>
-            <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-                </svg>
-            </a>
-        </div>
+      </footer>
     </div>
 </body>
 </html>
