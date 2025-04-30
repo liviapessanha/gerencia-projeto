@@ -431,6 +431,13 @@ header {
   margin: 8px 0 0 0;
 }
 
+.item-link {
+  text-decoration: none;
+  color: none;
+  text-decoration: none;
+  
+}
+
 footer {
   background-color: #013c5a;
   color: white;
