@@ -303,7 +303,7 @@ header {
   width: 390px;
   padding: 10px 30px;
   border-radius: 8px;
-  background-color: #fcf3e4;
+  background-color: #ffffff;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -314,23 +314,11 @@ header {
 
 .dropdown {
   display: none;
-  margin-top: 12px;
+  margin-top: 10px;
   position: relative;
-  background-color: #fcf3e4;
+  background-color: #ffffff;
   width: 100%;
   box-sizing: border-box;
-}
-
-.card-button {
-  background: none;
-  border: none;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #004264;
-  padding: 0;
-  text-align: left;
-  width: 100%;
 }
 
 .card-text {
@@ -343,7 +331,8 @@ header {
 
 .dropdown p {
   margin: 6px 0;
-  font-size: 14px;
+  font-weight: regular;
+  font-size: 16px;
 }
 
 .dropdown-sub {
@@ -360,6 +349,22 @@ header {
   font-size: 13px;
 }
 
+.card-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #004264;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-card.open .dropdown {
+  display: block;
+}
+
 .item-color {
   color: #004264;
   font-size: 18px;
@@ -370,8 +375,32 @@ header {
   }
 }
 
-.dropdown-card.open .dropdown {
-  display: block;
+.link-item {
+  text-decoration: none;
+  color: none;
+  color: #004264;
+}
+
+.titulo-menu {
+  font-size: 24px;
+  font-weight: bold;
+  color: #004264;
+}
+.subitem-notificacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ensino-notificacao {
+  background-color: #e09d00;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
 }
 
 .noticias-section {
@@ -406,7 +435,7 @@ header {
 }
 
 .conteudo {
-  background-color: #19709D;
+  background-color: #19709d;
   color: white;
   padding: 16px;
   display: flex;
@@ -431,13 +460,6 @@ header {
   margin: 8px 0 0 0;
 }
 
-.item-link {
-  text-decoration: none;
-  color: none;
-  text-decoration: none;
-  
-}
-
 footer {
   background-color: #013c5a;
   color: white;
@@ -445,6 +467,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 30px;
 }
 
 .logo-iff {
