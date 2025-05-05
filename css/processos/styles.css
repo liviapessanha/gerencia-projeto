@@ -6,6 +6,18 @@
   --cinza-claro: #eee;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main.container {
+  flex: 1;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -247,6 +259,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
+  width: 100%;
 }
 
 .logo-iff {
