@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alocação de Disciplina</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      @font-face {
-        font-family: 'Intro';
-        src: url('caminho-para-sua-fonte/intro-bold.woff2') format('woff2'),
-          url('caminho-para-sua-fonte/intro-bold.woff') format('woff');
-        font-weight: bold;
-        font-style: normal;
-      }
+     
 
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Intro', sans-serif;
-        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        
       }
 
       body {
-        background-color: #f0f0f0;
-      }
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #D9D9D9;
+    }
 
       header {
         background-color: #004165;
@@ -85,7 +85,7 @@
         width: 35px;
         height: 35px;
         border-radius: 50%;
-        background-color: #ccc;
+        /* background-color: #ccc; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -199,11 +199,7 @@
   <body>
     <header>
       <button class="menu-btn"></button>
-      
-      
-
-        
-        <div class="search-bar">
+      <div class="search-bar">
             <span class="search-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
@@ -226,7 +222,7 @@
           alt="Avatar"
         />
         </div>
-        <span>Nome Usuário</span>
+        <span>Alan Rene</span>
       </div>
     </header>
 
@@ -239,65 +235,28 @@
 
     <div class="content">
       <div class="column">
-        <div class="section-header">DOCENTES INTERNOS</div>
+        <div class="section-header">Docentes Internos</div>
         <div class="professor-list">
-          <div class="professor-item">
-            <div class="professor-name">Professor Interno 1</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Interno 2</div>
-            <div class="interest-tag">LISTA DE INTERESSE</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Interno 3</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Interno 4</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Interno 5</div>
-            <div class="interest-tag">LISTA DE INTERESSE</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Interno 6</div>
-            <div class="interest-tag">LISTA DE INTERESSE</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Interno 7</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Interno 8</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Interno 9</div>
-            <div class="interest-tag">LISTA DE INTERESSE</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Interno 10</div>
-            <div class="interest-tag">LISTA DE INTERESSE</div>
-          </div>
+          <div class="professor-item"><span class="professor-name">Alan Rene</span></div>
+          <div class="professor-item"><span class="professor-name">Bruno Pessanha</span><span class="interest-tag">Lista de Interesse</span></div>
+          <div class="professor-item"><span class="professor-name">Eliseu Valiant</span></div>
+          <div class="professor-item"><span class="professor-name">Joelma Alves</span></div>
+          <div class="professor-item"><span class="professor-name">Júlio Cezar Negri</span><span class="interest-tag">Lista de Interesse</span></div>
+          <div class="professor-item"><span class="professor-name">Juliano Kestenberg</span><span class="interest-tag">Lista de Interesse</span></div>
+          <div class="professor-item"><span class="professor-name">Leandro Nascimento</span></div>
+          <div class="professor-item"><span class="professor-name">Luis Cláudio Gonçalves</span></div>
+          <div class="professor-item"><span class="professor-name">Marco Antônio Moreira</span><span class="interest-tag">Lista de Interesse</span></div>
+          <div class="professor-item"><span class="professor-name">Rômulo Nascimento</span><span class="interest-tag">Lista de Interesse</span></div>
         </div>
       </div>
-
       <div class="column">
-        <div class="section-header">DOCENTES EXTERNOS</div>
+        <div class="section-header">Docentes Externos</div>
         <div class="professor-list">
-          <div class="professor-item">
-            <div class="professor-name">Professor Externo 1</div>
-            <div class="interest-tag">LISTA DE INTERESSE</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Externo 2</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Externo 3</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Externo 4</div>
-          </div>
-          <div class="professor-item">
-            <div class="professor-name">Professor Externo 5</div>
-          </div>
+          <div class="professor-item"><span class="professor-name">Alisson Nascimento</span></div>
+          <div class="professor-item"><span class="professor-name">André Uebe</span><span class="interest-tag">Lista de Interesse</span></div>
+          <div class="professor-item"><span class="professor-name">Érica Nogueira</span></div>
+          <div class="professor-item"><span class="professor-name">Marcos Abraão</span></div>
+          <div class="professor-item"><span class="professor-name">Fernando Luiz de Carvalho</span></div>
         </div>
       </div>
     </div>

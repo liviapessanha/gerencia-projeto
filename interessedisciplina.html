@@ -4,35 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Acadêmico - Histórico de Interesse</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #fff;
         }
         
         /* Header */
-        .header {
-            background-color: #003b55;
-            color: white;
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .menu-button {
-            background-color: #f5f5f5;
-            border: none;
-            border-radius: 5px;
-            padding: 8px 15px;
-            margin-left: 15px;
-            width: 85px;
-            height: 40px;
-        }
-        
-        .search-bar {
+        header {
+        background-color: #004165;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .menu-btn {
+        background-color: #ebebeb;
+        width: 80px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-image: url('menu.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 24px;
+      }
+
+
+.search-bar {
             display: flex;
             background-color: #f5f5f5;
             border-radius: 50px;
@@ -54,34 +61,45 @@
         .search-icon {
             color: #777;
         }
-        
-        .user-area {
-            display: flex;
-            align-items: center;
-            margin-right: 15px;
-        }
-        
-        .notification-icon {
+      .user-profile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .notification-icon {
             margin-right: 15px;
             color: white;
             font-size: 20px;
         }
-        
-        .user-profile {
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-        
-        .user-avatar {
-            width: 30px;
-            height: 30px;
-            background-color: #ccc;
-            border-radius: 50%;
-            margin-right: 8px;
-            background-image: url('/api/placeholder/30/30');
-            background-size: cover;
-        }
+
+      .user-avatar {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .breadcrumb {
+        background-color: #e0e0e0;
+        padding: 10px 20px;
+        font-size: 0.8rem;
+      }
+
+      .breadcrumb a {
+        color: #004165;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .breadcrumb span::after {
+        content: ' > ';
+        color: #666;
+      }
         
         /* Navigation Path */
         .navigation-path {
@@ -213,34 +231,39 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <button class="menu-button">☰</button>
-        <div class="search-bar">
-            <span class="search-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </span>
-            <input type="text" placeholder="Procurar">
-        </div>
-        <div class="user-area">
-            <div class="notification-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                </svg>
-            </div>
-            <div class="user-profile">
-                <div class="user-avatar"></div>
-                <span>Alan Rene</span>
-            </div>
-        </div>
+   
+<header>
+    <button class="menu-btn"></button>
+    <div class="search-bar">
+          <span class="search-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+          </span>
+          <input type="text" placeholder="Procurar">
+      
     </div>
+    <div class="user-profile">
+      <div class="notification-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+    </div>
+      <div class="user-avatar">
+        <img
+        src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231712/thesomeday123171200009/91087331-cone-de-perfil-de-avatar-padr%C3%A3o-para-masculino-espa%C3%A7o-reservado-para-fotos-cinza-ilustra%C3%A7%C3%A3o.jpg?ver=6"
+        alt="Avatar"
+      />
+      </div>
+      <span>Alan Rene</span>
+    </div>
+  </header>
     
     <div class="navigation-path">
         <span>HOME</span>
-        <span>SIGADM</span>
+        <span>ENSINO</span>
         <span>DISCIPLINA</span>
         <span>HISTÓRICO DE INTERESSE</span>
     </div>
