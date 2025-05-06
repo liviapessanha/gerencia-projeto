@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interesse Professor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #E5E5E5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background-color: #003A54;
+            padding: 15px 20px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-btn {
+            width: 30px;
+            height: 25px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .menu-btn:before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            top: 0;
+            left: 0;
+            box-shadow: 0 8px 0 0 white, 0 16px 0 0 white;
+        }
+
+        .search-bar {
+            display: flex;
+            background-color: #f5f5f5;
+            border-radius: 50px;
+            padding: 10px 20px;
+            width: 40%;
+            align-items: center;
+        }
+        
+        .search-bar input {
+            border: none;
+            width: 100%;
+            padding: 5px;
+            margin-left: 10px;
+            outline: none;
+            background-color: transparent;
+            font-size: 14px;
+        }
+        
+        .search-icon {
+            color: #777;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .notification-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+            position: relative;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            overflow: hidden;
+        }
+
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .user-profile span {
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #E5E5E5;
+            padding: 12px 0;
+        }
+
+        .breadcrumb {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            width: 90%;
+            max-width: 1200px;
+            margin: 25px auto;
+            position: relative;
+        }
+
+        .main-content {
+            width: calc(100% - 250px);
+        }
+
+        .professor-title {
+            color: #003A54;
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #003A54;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-icon {
+            color: #6A6A6A;
+            margin-left: 10px;
+        }
+
+        .profile-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+            margin-bottom: 40px;
+        }
+
+        .detail-group {
+            margin-bottom: 15px;
+        }
+
+        .detail-label {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            color: #003A54;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .documents-section {
+            margin-top: 30px;
+        }
+
+        .documents-header {
+            background-color: #003A54;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-bottom: 0;
+        }
+
+        .documents-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .document-button {
+            background-color: #0076B2;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 2px;
+            cursor: pointer;
+            width: 230px;
+            text-align: center;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 230px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .justification-header {
+            background-color: #00415e;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .justification-content {
+            background-color: #FFF8E7;
+            padding: 15px;
+            font-size: 13px;
+            line-height: 1.4;
+            color: #333;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .justification-content p {
+            margin-bottom: 10px;
+        }
+
+        .convoke-button {
+            background-color: #003A54;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003A54;
+            padding: 15px 20px;
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .redes-sociais {
+            display: flex;
+            align-items: center;
+        }
+
+        .redes-sociais img {
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+      <button class="menu-btn"></button>
+      <div class="search-bar">
+        <span class="search-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+        <input type="text" placeholder="Procurar">
+      </div>
+      <div class="user-profile">
+        <div class="notification-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </div>
+        <div class="user-avatar">
+          <img
+            src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231712/thesomeday123171200009/91087331-cone-de-perfil-de-avatar-padr%C3%A3o-para-masculino-espa%C3%A7o-reservado-para-fotos-cinza-ilustra%C3%A7%C3%A3o.jpg?ver=6"
+            alt="Avatar"
+          />
+        </div>
+        <span>Alan Rene</span>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="breadcrumb">
+            HOME > ENSINO > DISCIPLINAS > HISTÓRICO DE INTERESSE > MAURÍCIO SALLES ROBERTO
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="main-content">
+            <h1 class="professor-title">Mauricio Salles Roberto</h1>
+            
+            <div class="section-title">
+                Dados Gerais <span class="toggle-icon">▼</span>
+            </div>
+            
+            <div class="profile-details">
+                <div class="detail-group">
+                    <div class="detail-label">Matrícula:</div>
+                    <div class="detail-value">00001111222</div>
+                </div>
+                
+                <div class="detail-group">
+                    <div class="detail-label">Curso de Origem:</div>
+                    <div class="detail-value">Sistema de Informação</div>
+                </div>
+                
+                <div class="detail-group">
+                    <div class="detail-label">Disciplina de Interesse:</div>
+                    <div class="detail-value">Interfaces Digitais e Hipermídias</div>
+                </div>
+                
+                <div class="detail-group">
+                    <div class="detail-label">Disciplina de Ingresso:</div>
+                    <div class="detail-value">Computação Gráfica</div>
+                </div>
+                
+                <div class="detail-group">
+                    <div class="detail-label">Data de registro do interesse:</div>
+                    <div class="detail-value">24/03/2025</div>
+                </div>
+                
+                <div class="detail-group">
+                    <div class="detail-label">Setor de Origem:</div>
+                    <div class="detail-value">CTDGCC</div>
+                </div>
+            </div>
+            
+            <div class="documents-section">
+                <div class="documents-header">Documentos</div>
+                <div class="documents-container">
+                    <button class="document-button">Disponibilidade de carga horária</button>
+                    <button class="document-button">Currículo e Experiência</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <div class="justification-card">
+                <div class="justification-header">Justificativa</div>
+                <div class="justification-content">
+                    <p>Prezado professor Alan,</p>
+                    <p>Gostaria de manifestar meu interesse em ministrar a disciplina de Computação Gráfica. Tenho sólida experiência na área, tanto em sala de aula quanto em projetos práticos, onde a teoria e aplicação com ferramentas atuais do mercado se unem.</p>
+                    <p>Acredito que posso contribuir oferecendo uma abordagem atualizada, dinâmica e alinhada às demandas necessárias. Estou à disposição para conversar melhor sobre essa possibilidade.</p>
+                    <p>Atenciosamente,<br>Maurício S. Roberto</p>
+                </div>
+            </div>
+            
+            <button class="convoke-button">Convocar professor(a)</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <img
+        src="assets/logo/1b07b768699e88694a696dcf918ccff86a5036aa.png"
+        alt="Logo IFF"
+        style="height: 40px"
+      />
+      <div class="redes-sociais">
+        <img
+          src="assets/icons/93dfc774aa15fdaeaeb74208f938710f3cfbcffb.png"
+          alt="Icones redes sociais"
+        />
+      </div>
+    </footer>
+</body>
+</html>
