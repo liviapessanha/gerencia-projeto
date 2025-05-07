@@ -19,7 +19,6 @@
             flex-direction: column;
         }
 
-        /* Header */
         header {
             background-color: #003A54;
             padding: 15px 20px;
@@ -51,10 +50,12 @@
 
         .search-bar {
             display: flex;
+            position: absolute;
             background-color: #f5f5f5;
             border-radius: 50px;
             padding: 10px 20px;
             width: 40%;
+            left:25%;
             align-items: center;
         }
         
@@ -109,7 +110,6 @@
             font-size: 16px;
         }
 
-        /* Navigation */
         nav {
             background-color: #E5E5E5;
             padding: 12px 0;
@@ -123,18 +123,24 @@
             font-size: 12px;
         }
 
-        /* Main Content */
         main {
-            flex: 1;
-            width: 90%;
-            max-width: 1200px;
-            margin: 25px auto;
-            position: relative;
-        }
+    flex: 1;
+    width: 100%;
+    margin: 25px 0;
+    position: relative;
+}
 
-        .main-content {
-            width: calc(100% - 250px);
-        }
+.breadcrumb {
+  text-align: left;
+  padding-left: 20px; 
+  margin-left: 0;      
+}
+
+
+.main-content {
+    width: calc(100% - 250px);
+    padding-left: 20px;
+}
 
         .professor-title {
             color: #003A54;
@@ -158,11 +164,12 @@
         }
 
         .profile-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px 40px;
-            margin-bottom: 40px;
-        }
+    display: grid;
+    grid-template-columns: 1000px 10000px;
+    gap: 30px -10px;
+    justify-content: space-between;
+}
+
 
         .detail-group {
             margin-bottom: 15px;
@@ -188,13 +195,13 @@
             background-color: #003A54;
             color: white;
             font-weight: bold;
-            padding: 10px 20px;
+            padding: 20px 29px;
             display: inline-block;
             margin-bottom: 0;
         }
 
         .documents-container {
-            background-color: #f5f5f5;
+            background-color: #FFF8E7;
             padding: 20px;
             display: flex;
             gap: 20px;
@@ -203,15 +210,15 @@
         .document-button {
             background-color: #0076B2;
             color: white;
-            border: none;
-            padding: 12px 15px;
+            border: none;   
+            padding: 500px 30px;
             border-radius: 2px;
-            cursor: pointer;
-            width: 230px;
+            cursor: pointer; 
+            width: 1000px;
             text-align: center;
         }
 
-        /* Sidebar */
+
         .sidebar {
             width: 230px;
             position: absolute;
@@ -257,7 +264,6 @@
             margin-top: 20px;
         }
 
-        /* Footer */
         footer {
             background-color: #003A54;
             padding: 15px 20px;
@@ -278,7 +284,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
       <button class="menu-btn"></button>
       <div class="search-bar">
@@ -307,63 +312,67 @@
       </div>
     </header>
 
-    <!-- Navigation -->
     <nav>
         <div class="breadcrumb">
             HOME > ENSINO > DISCIPLINAS > HISTÓRICO DE INTERESSE > MAURÍCIO SALLES ROBERTO
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main>
         <div class="main-content">
-            <h1 class="professor-title">Mauricio Salles Roberto</h1>
+            <h1 class="professor-title">Maurício Salles Roberto</h1>
             
             <div class="section-title">
                 Dados Gerais <span class="toggle-icon">▼</span>
             </div>
             
-            <div class="profile-details">
-                <div class="detail-group">
+            <div class="profile-details" style="display: flex; flex-wrap: wrap; gap: 15px 30px; margin-bottom: 30px;">
+                <div class="detail-group" style="width: calc(50% - 15px); border-bottom: 1px solid #ccc; padding-bottom: 10px;">
                     <div class="detail-label">Matrícula:</div>
                     <div class="detail-value">00001111222</div>
                 </div>
-                
-                <div class="detail-group">
+    
+                <div class="detail-group" style="width: calc(50% - 15px); border-bottom: 1px solid #ccc; padding-bottom: 10px;">
                     <div class="detail-label">Curso de Origem:</div>
                     <div class="detail-value">Sistema de Informação</div>
                 </div>
-                
-                <div class="detail-group">
+    
+                <div class="detail-group" style="width: calc(50% - 15px); border-bottom: 1px solid #ccc; padding-bottom: 10px;">
                     <div class="detail-label">Disciplina de Interesse:</div>
                     <div class="detail-value">Interfaces Digitais e Hipermídias</div>
                 </div>
-                
-                <div class="detail-group">
+    
+                <div class="detail-group" style="width: calc(50% - 15px); border-bottom: 1px solid #ccc; padding-bottom: 10px;">
                     <div class="detail-label">Disciplina de Ingresso:</div>
                     <div class="detail-value">Computação Gráfica</div>
                 </div>
-                
-                <div class="detail-group">
+    
+                <div class="detail-group" style="width: calc(50% - 15px); border-bottom: 1px solid #ccc; padding-bottom: 10px;">
                     <div class="detail-label">Data de registro do interesse:</div>
                     <div class="detail-value">24/03/2025</div>
                 </div>
-                
-                <div class="detail-group">
+    
+                <div class="detail-group" style="width: calc(50% - 15px); border-bottom: 1px solid #ccc; padding-bottom: 10px;">
                     <div class="detail-label">Setor de Origem:</div>
                     <div class="detail-value">CTDGCC</div>
                 </div>
             </div>
-            
-            <div class="documents-section">
-                <div class="documents-header">Documentos</div>
-                <div class="documents-container">
-                    <button class="document-button">Disponibilidade de carga horária</button>
-                    <button class="document-button">Currículo e Experiência</button>
+    
+            <div class="documents-section" style="margin-top: 30px; background-color: #FFF8E7; border-radius: 8px; padding: 20px;">
+                <div class="documents-header" style="background-color: #003A54; color: white; font-weight: bold; padding: 10px 20px; display: inline-block; margin-bottom: 20px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+                    Documentos
+                </div>
+                <div class="documents-container" style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
+                    <button class="document-button" style="background-color: #0076B2; color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; width: 100%; max-width: 300px; font-weight: bold; text-align: center;">
+                        Disponibilidade de carga Horária
+                    </button>
+                    <button class="document-button" style="background-color: #0076B2; color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; width: 100%; max-width: 300px; font-weight: bold; text-align: center;">
+                        Currículo e Experiência
+                    </button>
                 </div>
             </div>
         </div>
-        
+    
         <div class="sidebar">
             <div class="justification-card">
                 <div class="justification-header">Justificativa</div>
@@ -374,12 +383,11 @@
                     <p>Atenciosamente,<br>Maurício S. Roberto</p>
                 </div>
             </div>
-            
+    
             <button class="convoke-button">Convocar professor(a)</button>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
       <img
         src="assets/logo/1b07b768699e88694a696dcf918ccff86a5036aa.png"
