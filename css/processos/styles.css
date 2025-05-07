@@ -328,6 +328,11 @@ header {
   background-color: #E09D00;
 }
 
+.link-item-processos {
+  text-decoration: none;
+  color: #fcf3e4;
+}
+
 footer {
   background-color: #013c5a;
   color: white;
